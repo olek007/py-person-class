@@ -7,13 +7,13 @@ class Person:
         Person.people.update({f"{name}": self})
 
     def add_wife(self, wife_name: str = None) -> None:
-        wife = self.people.get(wife_name)
+        wife = Person.people.get(wife_name)
         if wife:
             self.wife = wife
             self.wife.husband = self
 
     def add_husband(self, husband_name: str = None) -> None:
-        husband = self.people.get(husband_name)
+        husband = Person.people.get(husband_name)
         if husband:
             self.husband = husband
             self.husband.wife = self
