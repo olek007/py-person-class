@@ -1,5 +1,4 @@
 class Person:
-
     people: dict = {}
 
     def __init__(self, name: str, age: int) -> None:
@@ -21,11 +20,9 @@ class Person:
 
 
 def create_person_list(people: list) -> list:
-    result = []
 
     # Create person instances
-    for person in people:
-        result.append(Person(person["name"], person["age"]))
+    result = [Person(person["name"], person["age"]) for person in people]
 
     # Establish relationships
     for person in people:
